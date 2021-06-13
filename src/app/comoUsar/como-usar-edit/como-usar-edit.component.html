@@ -1,0 +1,41 @@
+<nav aria-label="breadcrumb">
+    <h1 align='center'>Gerenciamento Como usar</h1>
+
+    <ol class="breadcrumb" >
+		<li class="breadcrumb" aria-current="page">
+            <a _ngcontent-spo-c56="" routerLink='/como-usar-list' class="btn btn-success">Lista Como usar</a><br><br>
+        </li>
+        <li class="breadcrumb" aria-current="page">
+            <a _ngcontent-spo-c56="" routerLink='/painel' class="btn btn-success">Painel</a><br><br>
+        </li>
+        <li class="breadcrumb" aria-current="page">
+            <a _ngcontent-spo-c56="" routerLink='' class="btn btn-success">Logout</a><br><br>
+        </li>
+	</ol>
+</nav>
+<div class="container">
+	<div class="card list-car">
+		<h5 class="card-header">Como usar novo</h5>
+		<div class="card-body">
+			
+            <form id="add-form"  #f="ngForm" novalidate>
+				<div class="form-group">
+					<label class="col-md-2 control-label" for="categoria">Descrição:</label>  
+					<div class="col-md-6">
+						<input id="categoria" name="categoria" placeholder=""  [(ngModel)]="ofertaComoUsar.descricao" class="form-control input-md" required="" type="text">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-md-2 control-label" for="Cadastrar"></label>
+						<div class="col-md-8">
+                            <a _ngcontent-spo-c56="" (click)="atualizaOfertaComoUsar()" class="btn btn-success">Salvar</a>&nbsp;
+                            <button id="Cancelar" name="Cancelar" class="btn btn-danger" type="Reset">Cancelar</button>
+						</div>
+				</div>
+			</form>
+
+            
+		</div>
+	</div>
+</div>

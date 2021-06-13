@@ -1,0 +1,85 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<nav aria-label="breadcrumb">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item active" aria-current="page">Gerenciamento de Ofertas</li>
+		<li class="breadcrumb-item" aria-current="page">
+			<a routerLink='/oferta-list'>Listar ofertas</a>
+		</li>
+		<li class="breadcrumb-item" aria-current="page">
+			<a routerLink=''>Logout</a>
+		</li>
+	</ol>
+</nav>
+<div class="container">
+	<div class="card list-car">
+		<h5 class="card-header">Criando uma nova oferta</h5>
+		<div class="card-body">
+			<form id="add-form"  #f="ngForm" novalidate>
+				<div class="form-group">
+					<label class="col-md-2 control-label" for="categoria">Categoria:</label>  
+					<div class="col-md-8">
+						<input id="categoria" name="categoria" placeholder="" [(ngModel)]="oferta.categoria"  class="form-control input-md" required="" type="text">
+					</div>
+				</div>
+				<br>
+				<br>
+				<div class="form-group">
+					<label class="col-md-2 control-label" for="titulo">Título:</label>  
+					<div class="col-md-8">
+						<input id="titulo" name="titulo" placeholder=""  [(ngModel)]="oferta.titulo" class="form-control input-md" required="" type="text">
+					</div>
+				</div>
+				<br>
+				<br>
+				<div class="form-group">
+					<label class="col-md-2 control-label" for="descricao_oferta">Descrição da Oferta:</label>  
+					<div class="col-md-8">
+						<input id="descricao_oferta" name="descricao_oferta" [(ngModel)]="oferta.descricao_oferta" placeholder="" class="form-control input-md" required="" type="text">
+					</div>
+				</div>
+				<br>
+				<br>
+				<div class="form-group">
+					<label class="col-md-2 control-label" for="anunciante">Anunciante:</label>  
+					<div class="col-md-8">
+						<input id="anunciante" name="anunciante"  [(ngModel)]="oferta.anunciante" placeholder="" class="form-control input-md" required="" type="text">
+					</div>
+				</div>
+				<br>
+				<br>
+				<div class="form-group">
+					<label class="col-md-2 control-label" for="valor">Valor:</label>  
+					<div class="col-md-2">
+						<input id="valor" name="valor" [(ngModel)]="oferta.valor" placeholder="Apenas números" class="form-control input-md" required="" value="" type="search" maxlength="8" pattern="[0-9]+$">
+					</div>
+				</div>
+				<br>
+				<br>
+				<div class="form-group">
+					<label class="col-md-2 control-label" for="valor">Destaque:</label>  
+						<div class="input-group col-md-2" >
+							<span class="input-group-addon">     
+								<label class="radio-inline" for="radios-0">
+									<input type="radio" name="destaque" id="destaque" value="nao" required>
+									Não
+								</label> 
+								<label class="radio-inline" for="radios-1">
+									<input type="radio" name="destaque" id="fidestaquelhos" value="sim">
+									Sim
+								</label>
+							</span>
+						</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-2 control-label" for="Cadastrar"></label>
+						<div class="col-md-8">
+							<button id="Cadastrar" name="Cadastrar" class="btn btn-success" type="Submit" (click)="createOferta()"  >Cadastrar</button>
+							<button id="Cancelar" name="Cancelar" class="btn btn-danger" type="Reset">Cancelar</button>
+						</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

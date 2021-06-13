@@ -1,0 +1,42 @@
+
+<nav aria-label="breadcrumb">
+    <h1 align='center'>Gerenciamento Como usar</h1>
+
+    <ol class="breadcrumb" >
+		<li class="breadcrumb" aria-current="page">
+            <a _ngcontent-spo-c56="" routerLink='/como-usar-novo' class="btn btn-success">Novo como usar</a><br><br>
+        </li>
+        <li class="breadcrumb" aria-current="page">
+            <a _ngcontent-spo-c56="" routerLink='/painel' class="btn btn-success">Painel</a><br><br>
+        </li>
+        <li class="breadcrumb" aria-current="page">
+            <a _ngcontent-spo-c56="" routerLink='' class="btn btn-success">Logout</a><br><br>
+        </li>
+	</ol>
+</nav>
+<div class="container">
+	<div class="card list-car">
+		<h5 class="card-header">Lista Como usar</h5>
+		<div class="card-body">
+			<table class="table">
+				<thead>
+					<tr >
+						<th scope="col">Id</th>
+                        <th scope="col">Descrição</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let ofertaComoUsar of ofertasComoUsar">
+						<td>{{ofertaComoUsar.id}}</td>
+                        <td>{{ofertaComoUsar.descricao}}</td>
+						<td>
+                                <a _ngcontent-spo-c56="" routerLink="../como-usar-edit/{{ofertaComoUsar.id}}" class="btn btn-warning">Editar</a>&nbsp;
+                                <a _ngcontent-spo-c56="" routerLink="../como-usar-delete/{{ofertaComoUsar.id}}" class="btn btn-danger">Deletar</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

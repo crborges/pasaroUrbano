@@ -1,0 +1,46 @@
+<nav aria-label="breadcrumb">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item active" aria-current="page">Gerenciamento de Ofertas</li>
+		<li class="breadcrumb-item" aria-current="page">
+			<a routerLink='/oferta-new'>Criar uma oferta</a>
+		</li>
+		<li class="breadcrumb-item" aria-current="page">
+			<a routerLink=''>Logout</a>
+		</li>
+	</ol>
+</nav>
+<div class="container">
+	<div class="card list-car">
+		<h5 class="card-header">Lista de Ofertas</h5>
+		<div class="card-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">Id			</th>
+						<th scope="col">Categoria	</th>
+						<th scope="col">Título		</th>
+						<th scope="col">Anunciante	</th>
+						<th scope="col">Valor		</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let oferta of ofertas">
+						<td>{{oferta.id}}							</td>
+						<td>{{oferta.categoria}}					</td>
+						<td>{{oferta.titulo}}						</td>
+						<td>{{oferta.anunciante}}					</td>
+						<td>{{oferta.valor | currency : 'BRL' }}	</td>
+						<td>
+							<a routerLink="../oferta-edit/{{oferta.id}}" class="edit">
+								<button type="button" class="btn btn-success btn-sm ml-1" >Editar</button>
+							</a>
+							<a routerLink="../oferta-delete/{{oferta.id}}" class="edit">
+								<button type="button" class="btn btn-danger btn-sm ml-1" >Deletar</button>
+							</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
